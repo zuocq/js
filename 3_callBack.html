@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>GETTING STARTED WITH BRACKETS</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+<!--        <link rel="stylesheet" href="main.css">-->
+    </head>
+    <body>
+        <script>
+            
+            function forEach(list,callback) {
+               for(var n = 0; n < list.length; n++) {
+                   callback.call(list[n],n);       //第一个参数作为上下文，第二个参数作为单独的参数传递给callback回调
+               }
+            }
+            
+            var weapons = ['shuriken','katana','nunchucks'];
+            
+            forEach(weapons,
+                function(index) {
+                    console.log(this == weapons[index]);
+                    console.log("Got the expected value of " + weapons[index]);
+                }
+            );
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+http://blog.csdn.net/u012718439/article/details/38928645
+<script>
+(function(){
+    var sqlExec = {};
+    var _editor = "a";
+    sqlExec.getEditor = function(){
+        return _editor;
+    };
+    
+    window.sqlExec = sqlExec;
+
+})();
+
+//只创建一个全局变量作为容器
+var my = {};
+my.name = {
+	big_name:"zhangsan",
+	small_name:"lisi"
+};
+my.work = {
+	school_work:"study",
+	family_work:"we are"
+};
+
+(function(obj){  
+    /* 在这里边就与外边隔离了，定义的局部变量不会与外界干扰 */  
+    /* 为了跟外界达到共享的目的，还可以为其加入参数，例如obj,在最后调用的时候把相关的参数传进来，例如下边的window */  
+      
+    var A = {};//定义一个A包  
+    var tmp;//临时变量  
+  
+    A.i = 1;//定义这个包里边的i变量  
+    A.func = function(){alert('I am A');};  
+      
+    obj.A = A;/* 把A包挂到obj底下 */  
+      
+})(window);  
+
+(function(obj){
+	
+})();
+
+(function(){}())
+(function(){})()
+</script>
+
+<p onClick = "console.log(sqlExec.getEditor());">
+a   
+</p>
+
+<p onClick = "window.func();">
+b   
+</p>
+
+<p onClick = "window.func();">
+b   
+</p>
+</body>
+</html>

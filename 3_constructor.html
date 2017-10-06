@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>GETTING STARTED WITH BRACKETS</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+<!--        <link rel="stylesheet" href="main.css">-->
+    </head>
+    <body>
+        <script>
+            
+            function Ninja() {
+                this.skulk = function() {return this;}
+            }
+            
+            var ninja1 = new Ninja();
+            var ninja2 = new Ninja();
+            
+            console.log(ninja1.skulk() === ninja1);
+            console.log(ninja2.skulk() === ninja2);
+            
+            //函数和方法的命名通常以小写字母开头
+            //构造器通常以大写字母开头
+            
+            //new-创建一个新的空对象；
+            //传递给构造器的对象是this参数，从而成为构造器的函数上下文；
+            //如果没有显示的返回值，新创建的对象则作为构造器的返回值进行返回
+            
+            //指定函数的上下文很重要
+            
+            //作为方法调用的时候，该上下文是方法的拥有者；
+            //作为全局函数调用使，该上下文是window
+            //作为构造器调用时其上下文则是新创建的对象实例
+            
+            
+        </script>
+    </body>
+</html>
+

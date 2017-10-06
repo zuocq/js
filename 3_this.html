@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>GETTING STARTED WITH BRACKETS</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+<!--        <link rel="stylesheet" href="main.css">-->
+    </head>
+    <body>
+        <script>
+          //java中的this是方法声明所在类的一个实例
+            
+         //javascript中的this称为调用上下文 invocation context
+         
+            function creep() {return this;}
+            
+            console.log(creep() === window);
+            
+            var sneak = creep;
+            
+            console.log(sneak() === window);
+            
+            var ninja1 = {
+                skulk:creep
+            };
+            
+            console.log(ninja1.skulk() === ninja1);
+            
+            var ninja2 = {
+                skulk:creep
+            }
+            
+            console.log(ninja2.skulk() === ninja2);
+            
+            
+            
+            //函数上下文是该方法所在的对象
+            //同样的函数实例被ninja1和ninja2共享，执行时改函数是可以访问并且操作该方法所属的对象，这意思着我们不需要创建单独的函数副本，
+            //就可以在不同的对象上完成相同的处理过程，这是面向对象编程的一个宗旨
+            
+            
+        </script>
+    </body>
+</html>
+

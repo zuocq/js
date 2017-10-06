@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>GETTING STARTED WITH BRACKETS</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+<!--        <link rel="stylesheet" href="main.css">-->
+    </head>
+    <body>
+        <script>
+            function isNimble(){return true;}
+            console.log(typeof window.isNimble === "function");         //函数是作为属性添加到Windows对象上去的
+            
+            var canFly = function(){return true;};
+            console.log(typeof window.canFly === "function")
+            
+            window.isDeadly = function(){return true;};
+            console.log(typeof window.isDeadly === "function");
+            console.log(window.isDeadly.name === "");                   //匿名函数的name属性的值是一个空字符串
+            
+            function outer(){
+                console.log(typeof inner === "function");               //inner创建之前也可以访问
+                function inner(){}
+                console.log(typeof inner === "function");               //inner创建之后可以访问
+                console.log(window.inner === undefined);                //没有创建全局inner
+            }
+            outer();
+            
+            console.log(window.inner === undefined);
+            
+            window.wieldsSword = function swingsSword(){return true;};
+            console.log(window.wieldsSword.name === "swingsSword");     //命名函数有一个name属性
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>GETTING STARTED WITH BRACKETS</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+<!--        <link rel="stylesheet" href="main.css">-->
+    </head>
+    <body>
+        <script>
+		   //函数可以在其作用域范围内提前被引用，但变量不行。
+           console.log("before after");
+            function outer() {
+                console.log("inner after,before a:" + a);   //inner after,before a:undefined
+                var a = 1;
+                console.log("inner after,after a :" + a);
+				
+                console.log("before b :" + b); 	//before b :undefined
+                var b = 2;
+                console.log("after b :" + b);
+				
+                if(a == 1) {
+                    console.log("before c :" +c);	//before c :undefined
+                    var c = 3;
+                    console.log("after c");
+                }
+                
+                console.log(c == 3);	//true
+            }
+            outer();
+            console.log("after outer");
+
+			//'typeof'运算符的优先级不比'+'高	
+			console.log("before function inner :" + (typeof inner === "function"));  //before function inner :true   
+			console.log("before function inner :" + typeof inner === "function");	//false		
+			function inner() {}
+			console.log("after function inner :" + (typeof inner === 'function'));	//after function inner :true
+            
+        </script>
+    </body>
+</html>
+
